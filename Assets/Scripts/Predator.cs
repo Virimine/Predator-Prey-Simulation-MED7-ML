@@ -7,35 +7,44 @@ using Unity.MLAgents.Sensors;
 
 public class Predator : Agent {
 
-	[SerializeField] Transform targetTransform;
+	[SerializeField] Transform preyTransform;
 	[SerializeField] float moveSpeed = 1f;
 	[SerializeField] Material winMaterial;
 	[SerializeField] Material loseMaterial;
-	[SerializeField] Transform spawnArea;
+	[SerializeField] Transform predatorSpawnArea;
+	[SerializeField] Transform preySpawnArea;
 
 	Vector3 initialPos;
+	Vector3 preyInitialPos;
 	MeshRenderer meshRenderer;
 
-	private void Awake() {
-		meshRenderer = GetComponent<MeshRenderer>();
-	}
+	void Awake() => meshRenderer = GetComponent<MeshRenderer>();
 
-	void Start() {
-		initialPos = spawnArea.transform.localPosition + new Vector3(Random.Range((-transform.localScale.x / 2), transform.localScale.x / 2), -3, Random.Range((-transform.localScale.z / 2), transform.localScale.z / 2));
-		//initialPos = transform.localPosition;
+	//void Start() {
+	//	initialPos = transform.localPosition;
+	//	preyInitialPos = preyTransform.localPosition;
+	//}
+
+	Vector3 GetInitialPosition(Transform spawnArea) {
+		var rndSpawnBounds = new Vector3(Random.Range((-spawnArea.localScale.x / 2), spawnArea.localScale.x / 2), 0, Random.Range((-spawnArea.localScale.z / 2), spawnArea.localScale.z / 2));
+		return spawnArea.localPosition + rndSpawnBounds;
 	}
 
 	// Initialize episode.
 	public override void OnEpisodeBegin() {
+		transform.localPosition = GetInitialPosition(predatorSpawnArea);
+		preyTransform.localPosition = GetInitialPosition(preySpawnArea);
 
-		Debug.Log($"Starting episode...");
-		transform.localPosition = initialPos;
+		//transform.localPosition = initialPos;
+		//preyTransform.localPosition = preyInitialPos;
+
+		Debug.Log("reset");
 	}
 
 	// Adds the agent's position and the target's position to the sensor for observation.
 	public override void CollectObservations(VectorSensor sensor) {
 		sensor.AddObservation(transform.localPosition);
-		sensor.AddObservation(targetTransform.localPosition);
+		sensor.AddObservation(preyTransform.localPosition);
 	}
 
 	// Process the continuous actions (movement along x and z axes) and applies them to move the agent. Called when the agent receives an action during the simulation.
@@ -58,12 +67,11 @@ public class Predator : Agent {
 			meshRenderer.material = winMaterial;
 
 		}
-		if (other.TryGetComponent<Wall>(out Wall wall)) {
+		else if (other.TryGetComponent<Wall>(out Wall wall)) {
 			AddReward(-1f);
 			meshRenderer.material = loseMaterial;
 		}
-
-		EndEpisode();
+			EndEpisode();
 	}
 
 	// For testing

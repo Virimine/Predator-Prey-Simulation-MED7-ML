@@ -11,9 +11,8 @@ GameObject:
   - component: {fileID: 4746186713711243151}
   - component: {fileID: 4746986417629055578}
   - component: {fileID: 2859122150880916639}
-  - component: {fileID: 7558976004313335676}
   m_Layer: 0
-  m_Name: spawn area
+  m_Name: Prey Spawn Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -28,11 +27,11 @@ Transform:
   m_GameObject: {fileID: 330510482491492142}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.8563805, y: -0.48012018, z: 0.4673252}
-  m_LocalScale: {x: 14, y: 1, z: 30}
+  m_LocalPosition: {x: 4.42819, y: -3, z: 3.7336626}
+  m_LocalScale: {x: 5, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6407968960584941803}
+  m_Father: {fileID: 4315006235555073497}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4746986417629055578
 MeshFilter:
@@ -86,27 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &7558976004313335676
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 330510482491492142}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &815670732600543089
 GameObject:
   m_ObjectHideFlags: 0
@@ -116,6 +94,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4315006235555073497}
+  - component: {fileID: 3747688893657712404}
   m_Layer: 0
   m_Name: Testing Environment
   m_TagString: Untagged
@@ -137,10 +116,24 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1924781259115614481}
+  - {fileID: 3930427764335224863}
   - {fileID: 6407968960584941803}
+  - {fileID: 4746186713711243151}
   - {fileID: 6631129255629845067}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3747688893657712404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 815670732600543089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2035f05299ab6d847b012e176f21236c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1166591287157227875
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &7340989565644267773
 Transform:
   m_ObjectHideFlags: 0
@@ -329,8 +322,7 @@ Transform:
   m_LocalPosition: {x: 2, y: -3, z: 3.5}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4746186713711243151}
+  m_Children: []
   m_Father: {fileID: 4315006235555073497}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7203678037646846594
@@ -450,11 +442,10 @@ Transform:
   m_GameObject: {fileID: 3805237840598114112}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.99999994, y: -3, z: 3.5}
+  m_LocalPosition: {x: -0.99999994, y: -3.11006, z: 3.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3930427764335224863}
+  m_Children: []
   m_Father: {fileID: 4315006235555073497}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3511153050961827280
@@ -579,9 +570,9 @@ MonoBehaviour:
     VectorActionDescriptions: []
     VectorActionSpaceType: 1
     hasUpgradedBrainParametersWithActionSpec: 1
-  m_Model: {fileID: 0}
+  m_Model: {fileID: 5022602860645237092, guid: c2daac9cef4145d4ab8ed0b47032601a, type: 3}
   m_InferenceDevice: 0
-  m_BehaviorType: 0
+  m_BehaviorType: 2
   m_BehaviorName: Hunt
   TeamId: 0
   m_UseChildSensors: 1
@@ -604,10 +595,12 @@ MonoBehaviour:
     maxStep: 0
   hasUpgradedFromAgentParameters: 1
   MaxStep: 1000
-  targetTransform: {fileID: 6407968960584941803}
+  preyTransform: {fileID: 6407968960584941803}
   moveSpeed: 5
   winMaterial: {fileID: 2100000, guid: 73b8baaeaa687c4489a31ea52df6b231, type: 2}
   loseMaterial: {fileID: 2100000, guid: b8368fdd85f1cab4ba2d5e103b0cc3e9, type: 2}
+  predatorSpawnArea: {fileID: 3930427764335224863}
+  preySpawnArea: {fileID: 4746186713711243151}
 --- !u!114 &1348457900580126154
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -981,9 +974,8 @@ GameObject:
   - component: {fileID: 3930427764335224863}
   - component: {fileID: 4977391958414888208}
   - component: {fileID: 1021486932587480441}
-  - component: {fileID: 2569201066046060456}
   m_Layer: 0
-  m_Name: spawn area
+  m_Name: Predator Spawn Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -998,11 +990,11 @@ Transform:
   m_GameObject: {fileID: 8660768878309879186}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.57181, y: -0.24006009, z: 0.2336626}
-  m_LocalScale: {x: 7, y: 0.5, z: 15}
+  m_LocalPosition: {x: -3.57181, y: -3.11006, z: 3.7336626}
+  m_LocalScale: {x: 5, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1924781259115614481}
+  m_Father: {fileID: 4315006235555073497}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &4977391958414888208
 MeshFilter:
@@ -1056,27 +1048,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &2569201066046060456
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8660768878309879186}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &9100487419514136637
 GameObject:
   m_ObjectHideFlags: 0
