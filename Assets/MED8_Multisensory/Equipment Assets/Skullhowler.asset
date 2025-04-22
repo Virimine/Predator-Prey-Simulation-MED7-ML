@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f625e1f8ebb2d0348bd75300370ba712, type: 3}
+  m_Name: Skullhowler
+  m_EditorClassIdentifier: 
+  itemName: Skullhowler
+  sprite: {fileID: 21300000, guid: abd72fbc383e26a40924a06e47b1a354, type: 3}
+  rarity: 1
+  description: A brutal weapon used by warlords of the old tribes. Its jagged edge
+    leaves devastating wounds and echoes with the cries of the fallen.
+  specialPower: Warcry
+  specialPowerDescription: Unleashes a bone-chilling scream that buffs your damage
+    and frightens nearby enemies, lowering their defense and attack briefly.
+  attack: 33
+  magicAttack: 3
+  speed: 15

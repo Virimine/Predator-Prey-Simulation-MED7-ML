@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f625e1f8ebb2d0348bd75300370ba712, type: 3}
+  m_Name: Emberlight Blade
+  m_EditorClassIdentifier: 
+  itemName: Emberlight Blade
+  sprite: {fileID: 21300000, guid: 72403cca7a74cf64da10b966e4d1c4ec, type: 3}
+  rarity: 0
+  description: "A finely tempered sword that glows with an inner fire. Elegant and
+    deadly, it\u2019s the perfect balance of form and function in battle."
+  specialPower: Flame Arc
+  specialPowerDescription: Executes a sweeping slash that ignites enemies in a line,
+    leaving a trail of fire that continues to burn for several seconds.
+  attack: 29
+  magicAttack: 10
+  speed: 18

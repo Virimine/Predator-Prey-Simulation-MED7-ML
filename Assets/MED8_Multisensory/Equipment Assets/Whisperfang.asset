@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f625e1f8ebb2d0348bd75300370ba712, type: 3}
+  m_Name: Whisperfang
+  m_EditorClassIdentifier: 
+  itemName: Whisperfang
+  sprite: {fileID: 21300000, guid: 2653f16178687b7498b7edff89bb91ea, type: 3}
+  rarity: 0
+  description: A finely balanced blade designed for stealth and precision. Its dark
+    steel seems to drink in the light, making it ideal for silent kills.
+  specialPower: Shadowstep
+  specialPowerDescription: Instantly teleport behind the target and deliver a critical
+    strike. Grants temporary invisibility for a few seconds after the hit.
+  attack: 18
+  magicAttack: 5
+  speed: 27

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f625e1f8ebb2d0348bd75300370ba712, type: 3}
+  m_Name: Saphire Scepter
+  m_EditorClassIdentifier: 
+  itemName: Saphire Scepter
+  sprite: {fileID: 21300000, guid: 8e1005548a1155b40aea6c7f9aee9629, type: 3}
+  rarity: 2
+  description: A regal scepter carved from eternal ice, humming with arcane cold.
+    It channels frost magic with precision and leaves enemies frozen in fear.
+  specialPower: Frostbind
+  specialPowerDescription: On hit, has a high chance to freeze enemies in place for
+    a few seconds, slowing all actions and gradually dealing cold damage.
+  attack: 6
+  magicAttack: 35
+  speed: 12

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f625e1f8ebb2d0348bd75300370ba712, type: 3}
+  m_Name: Rootwhisper
+  m_EditorClassIdentifier: 
+  itemName: Rootwhisper
+  sprite: {fileID: 21300000, guid: d35a32ad9350ee04d9080d7ae765d80c, type: 3}
+  rarity: 0
+  description: Crafted from enchanted oak and entwined with living vines, this scepter
+    pulses with natural life and channels the wilds into fierce spells.
+  specialPower: Verdant Surge
+  specialPowerDescription: Calls forth thorned roots that entangle enemies in place
+    and restore health to nearby allies over a short duration.
+  attack: 55
+  magicAttack: 33
+  speed: 16

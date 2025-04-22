@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f625e1f8ebb2d0348bd75300370ba712, type: 3}
+  m_Name: Emberfang
+  m_EditorClassIdentifier: 
+  itemName: Emberfang
+  sprite: {fileID: 21300000, guid: bf7b9931a17262c46a877ac85aff16c1, type: 3}
+  rarity: 1
+  description: A lightweight throwing axe imbued with smoldering flame. Built for
+    quick strikes, it burns enemies from afar with each precise throw.
+  specialPower: Flame Return
+  specialPowerDescription: After being thrown, the tomahawk returns in a fiery arc,
+    dealing burn damage both on its way out and back to the wielder.
+  attack: 21
+  magicAttack: 12
+  speed: 23
