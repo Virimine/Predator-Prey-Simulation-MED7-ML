@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 798368786cd55124595551bc755755a1, type: 3}
-  m_Name: PlainChair_easy
+  m_Name: ModernSofa
   m_EditorClassIdentifier: 
   lines:
-  - Hey! I'm looking for a [FurnitureType] with some serious [Functionality] vibes.
-  furniture: {fileID: 11400000, guid: 63ca83fc5fef9bd4bbcf62f59116dcdd, type: 2}
+  - "I\u2019m hosting guests soon. Think you can whip up a Modern [FurnitureType]
+    that\u2019s great for [Functionality]"
+  furniture: {fileID: 11400000, guid: cebc440606804ae40b1b786f35818638, type: 2}

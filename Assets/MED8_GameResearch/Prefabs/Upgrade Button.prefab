@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5364750722851144989}
   - component: {fileID: 6714358576886405057}
   - component: {fileID: 8946954348236717542}
+  - component: {fileID: 406669678626741354}
   m_Layer: 5
   m_Name: Upgrade Button
   m_TagString: Untagged
@@ -39,7 +40,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 840, y: 840}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &8943907546727600803
 CanvasRenderer:
@@ -62,7 +63,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1, g: 0.1, b: 0.1, a: 1}
+  m_Color: {r: 0.74509805, g: 0.2392157, b: 0.16470589, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -135,10 +136,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee5a9120e5100944592377c3c9539de7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  upgradeData: {fileID: 11400000, guid: 9fec23d9611b3f9498fbe03d7c9939bc, type: 2}
   upgradeButton: {fileID: 6714358576886405057}
+  nameText: {fileID: 280526744148583896}
   costText: {fileID: 2531433421795601877}
   descriptionText: {fileID: 0}
+  upgradeData: {fileID: 11400000, guid: 9fec23d9611b3f9498fbe03d7c9939bc, type: 2}
+  objectEnable: {fileID: 0}
+  objectDisable: {fileID: 0}
+--- !u!114 &406669678626741354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 72256384920496748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0.74509805, g: 0.2392157, b: 0.16470589, a: 0.5}
+  m_EffectDistance: {x: 0, y: -6}
+  m_UseGraphicAlpha: 1
 --- !u!1 &596677178120723245
 GameObject:
   m_ObjectHideFlags: 0
@@ -173,8 +192,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 2, y: 12.999997}
-  m_SizeDelta: {x: -20, y: -74}
+  m_AnchoredPosition: {x: 0, y: 12.999999}
+  m_SizeDelta: {x: -48, y: -74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &575971249889566637
 CanvasRenderer:
@@ -204,7 +223,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Chair Class
+  m_text: Upgrade Chair Class One
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -213,8 +232,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293322470
-  m_fontColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -349,8 +368,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4293322470
-  m_fontColor: {r: 0.9, g: 0.9, b: 0.9, a: 1}
+    rgba: 2583691263
+  m_fontColor: {r: 1, g: 1, b: 1, a: 0.6}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

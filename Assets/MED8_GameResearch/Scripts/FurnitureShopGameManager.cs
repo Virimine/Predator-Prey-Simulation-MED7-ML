@@ -57,6 +57,10 @@ public class FurnitureShopGameManager : MonoBehaviour {
 
 	void Start() => SetState(GameState.Opening);
 
+	void Update() {
+		if (Input.GetKeyDown(KeyCode.Tab)) { timer.AddDebugTime(); }
+	}
+
 	public void SetState(GameState newState) {
 		currentState = newState;
 		Debug.Log($"Switched to state: {newState}");

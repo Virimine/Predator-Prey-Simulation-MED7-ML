@@ -12,19 +12,13 @@ public class InterfaceManager : MonoBehaviour {
 	[SerializeField] RectTransform upgradePanel;
 	[SerializeField] TextMeshProUGUI coinsText;
 
-	List<FurnitureDrag> drags;
-	List<FurnitureDrop> slots;
+	[SerializeField] List<FurnitureDrag> drags;
+	[SerializeField] List<FurnitureDrop> slots;
 
 	public List<FurnitureDrop> OccupiedSlots => slots.Where(slot => slot.isOccupied).ToList(); // Get currently occupied slots only
-
-	public event System.Action OnOpenShopButtonPressed;
+	public List<FurnitureDrop> AvailableSlots => slots.Where(slot => !slot.isOccupied).ToList(); // Get currently unoccupied slots only
 
 	FurnitureShopGameManager manager => FurnitureShopGameManager.instance;
-
-	void Awake() {
-		drags = FindObjectsByType<FurnitureDrag>(FindObjectsSortMode.None).ToList();
-		slots = FindObjectsByType<FurnitureDrop>(FindObjectsSortMode.None).ToList();
-	}
 
 	void Start() {
 		craftButton.onClick.AddListener(() => manager.orderManager.ValidateCraft());
@@ -44,16 +38,26 @@ public class InterfaceManager : MonoBehaviour {
 		ResetBoard();
 		manager.ProceedToNextDay();
 	}
-	public void ShowUpgradeScreen() {
-		upgradePanel.gameObject.SetActive(true);
-	}
+	public void ShowUpgradeScreen() => upgradePanel.gameObject.SetActive(true);
 
 	public void UpdateCoinsText(int newAmount) => coinsText.text = $"coins: {newAmount}";
 
-	public void ResetBoard(){
+	public void ResetBoard() {
 
-		foreach (var drag in drags) {
-			drag.ResetDrag();
+		GetActiveDrags().Clear();
+
+		foreach (var drag in GetActiveDrags()) {
+
+			// remove casting when you make abstract classes
+			if (drag is FunctionalityDrag func && !func.isLocked) {
+				func.ResetDrag();
+				continue;
+			}
+
+			if (drag is ClassDrag classDrag) {
+				classDrag.ClearStoredFunctionalities();
+				classDrag.ResetDrag();
+			}
 		}
 	}
 
@@ -66,5 +70,18 @@ public class InterfaceManager : MonoBehaviour {
 		}
 
 		manager.SetState(GameState.FurnitureAssembly);
+	}
+
+	List<FurnitureDrag> GetActiveDrags() {
+		List<FurnitureDrag> activeDrags = new();
+
+		foreach (var drag in drags) {
+
+			if (drag.isActiveAndEnabled) {
+				activeDrags.Add(drag);
+			}
+		}
+
+		return activeDrags;
 	}
 }

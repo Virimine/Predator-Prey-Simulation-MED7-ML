@@ -5,35 +5,53 @@ using UnityEngine.EventSystems;
 
 public class FurnitureDrop : MonoBehaviour, IDropHandler {
 
-	public SlotType slotType;
-
 	RectTransform rectTransform;
 
-	public FurnitureDrag currentItem { get; private set; }
+	public SlotType slotType;
 
-	public bool isOccupied {
-		get => currentItem != null;
-		private set { }
-	}
+	public FurnitureDrag currentItem { get; set; }
+
+
+	public bool isOccupied => currentItem != null;
 
 	void Start() => rectTransform = GetComponentInChildren<RectTransform>();
 
 	public virtual void OnDrop(PointerEventData eventData) {
 
-		GameObject dragObject = eventData.pointerDrag;
-		currentItem = dragObject.GetComponentInChildren<FurnitureDrag>();
+		currentItem = eventData.pointerDrag?.GetComponentInChildren<FurnitureDrag>();  // should not be using null propagation here?
 
-		if (dragObject != null && currentItem.itemType == slotType) {
-			eventData.pointerDrag.GetComponent<RectTransform>().position = rectTransform.position;
+		if (eventData.pointerDrag != null && currentItem.itemType == slotType) {
+			currentItem.GetComponent<RectTransform>().position = rectTransform.position;
+		}
+
+		OnClassDragDropped();
+	}
+
+
+	// Should be moved to the specific board furniture drop when this becomes and abstract class. It should not be called in EmbeddedFurnitureDrop.
+	void OnClassDragDropped() {
+		if (currentItem.itemType == SlotType.Class && currentItem is ClassDrag classDrag && classDrag.HasStorredFunctionalities) {
+
+			var availableSlots = FurnitureShopGameManager.instance.interfaceManager.AvailableSlots;
+			var storedFuncs = classDrag.StorredFunctionalities;
+
+			for (int i = 0; i < storedFuncs.Count; i++) {
+				if (i >= availableSlots.Count) {
+					Debug.LogWarning("Not enough available slots to place all functionalities!");
+					break;
+				}
+
+				FurnitureDrop targetSlot = availableSlots[i];
+				FurnitureDrag functionality = storedFuncs[i];
+
+				targetSlot.currentItem = functionality;
+				targetSlot.currentItem.targetSlot = targetSlot;
+
+				functionality.GetComponent<RectTransform>().position = targetSlot.rectTransform.position;
+				FurnitureShopGameManager.instance.interfaceManager.OccupiedSlots.Add(targetSlot);
+			}
 		}
 	}
 
 	public bool Matches(string expectedName) => isOccupied && currentItem.itemName == expectedName;
-
-	public string GetItemNameIfOfType() => isOccupied ? currentItem.itemName : null;
-
-	public void ClearSlot() {
-		currentItem = null;
-		isOccupied = false;
-	}
 }

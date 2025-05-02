@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edd34bc0b92fbe748bbe1fe5cb3b6814, type: 3}
-  m_Name: Intro_Dialogue
-  m_EditorClassIdentifier: Assembly-CSharp::StoryDialogue
-  lines: []
-  setType: 0
+  m_Script: {fileID: 11500000, guid: 23ec3e24c1ad3084ea9ecd734d695031, type: 3}
+  m_Name: Boho Chair
+  m_EditorClassIdentifier: Assembly-CSharp::FurnitureData
+  type: 0
+  functionalities: 00000000020000000100000009000000

@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Chair
   m_EditorClassIdentifier: Assembly-CSharp::FurnitureData
   type: 0
-  functionalities: 0000000001000000
-  style: 0
+  functionalities: 000000000100000002000000

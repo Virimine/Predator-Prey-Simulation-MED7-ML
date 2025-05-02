@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using UnityEngine.UI;
 
 public enum SlotType { Class, Functionality, Interface }
 
@@ -12,20 +11,20 @@ public class FurnitureDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 	[SerializeField] TextMeshProUGUI nameTMP;
 	[SerializeField] TextMeshProUGUI typeTMP;
 
-	public SlotType itemType;
-	public string itemName;
-
-	FurnitureDrop dropTarget;
-	RectTransform rectTransform;
 	CanvasGroup canvas;
 	Vector3 initalPosition;
 
+	protected RectTransform rectTransform;
+
+	public SlotType itemType;
+	public string itemName; // make FunctionalityType for functionality drags and Type for Class / Interface.
+	public FurnitureDrop targetSlot { get; set; }
 
 	protected virtual void Awake() {
 		rectTransform = GetComponentInChildren<RectTransform>();
 		canvas = GetComponentInChildren<CanvasGroup>();
 	}
-	void Start() {
+	protected virtual void Start() {
 		initalPosition = rectTransform.position;
 		nameTMP.text = DialogueFormatter.SplitCamelCase(itemName);
 		typeTMP.text = DialogueFormatter.SplitCamelCase(itemType.ToString());
@@ -33,14 +32,8 @@ public class FurnitureDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 
 
 	public virtual void OnBeginDrag(PointerEventData eventData) {
-
-		canvas.alpha = 0.8f;
-		canvas.blocksRaycasts = false;
-
-		if (dropTarget != null) {
-			dropTarget.ClearSlot();
-			dropTarget = null;
-		}
+		SetDragInteractivity(false);
+		ClearDropTarget();
 	}
 
 	public virtual void OnDrag(PointerEventData data) {
@@ -51,35 +44,43 @@ public class FurnitureDrag : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 	}
 
 	public virtual void OnEndDrag(PointerEventData eventData) {
-		canvas.alpha = 1f;
-		canvas.blocksRaycasts = true;
 
+		SetDragInteractivity(true);
 
-		if (eventData.pointerEnter == null) {
-			rectTransform.position = initalPosition;
-			return;
-		}
+		targetSlot = eventData.pointerEnter?.GetComponentInChildren<FurnitureDrop>(); // should not be using null propagation here?
 
-		dropTarget = eventData.pointerEnter.GetComponentInChildren<FurnitureDrop>();
-		bool isCorrectDrop = dropTarget != null && itemType == dropTarget.slotType;
+		// Check if the drop target exists and if the item matches the expected slot type.
+		bool isCorrectDrop = targetSlot != null && itemType == targetSlot.slotType;
 
+		// If nothing was under the pointer when the drag ended or if it's not a valid drop, reset the object's position.
 		if (!isCorrectDrop) {
 			rectTransform.position = initalPosition;
 		}
 	}
 
-	public void ResetDrag() {
+	public virtual void ResetDrag() {
 
-		rectTransform.SetParent(FurnitureShopGameManager.instance.mainCanvas.transform);
+		var canvas = FurnitureShopGameManager.instance.mainCanvas.transform;
+		rectTransform.SetParent(canvas); // Set to the second-to-last child of a parent transform.
+		rectTransform.SetSiblingIndex(canvas.childCount - 5);
+
 		rectTransform.position = initalPosition;
 
-
-		if (dropTarget != null) {
-			dropTarget.ClearSlot();
-			dropTarget = null;
-		}
+		ClearDropTarget();
 	}
 
+	// If it is was placed in a slot, clear it and set it to null.
+	protected void ClearDropTarget() {
 
+		if (targetSlot == null) { return; }
+
+		targetSlot.currentItem = null;
+		targetSlot = null;
+	}
+
+	protected void SetDragInteractivity(bool blocksRaycasts) {
+		canvas.alpha = blocksRaycasts ? 1f : 0.8f;
+		canvas.blocksRaycasts = blocksRaycasts;
+	}
 }
 

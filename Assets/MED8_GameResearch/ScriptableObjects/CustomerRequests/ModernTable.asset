@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 798368786cd55124595551bc755755a1, type: 3}
+  m_Name: ModernTable
+  m_EditorClassIdentifier: 
+  lines:
+  - "I\u2019m hosting guests soon. Think you can whip up a Modern [FurnitureType]
+    that\u2019s great for [Functionality]"
+  furniture: {fileID: 11400000, guid: 8354364c83ac7eb46b9c4c196e162ded, type: 2}

@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 798368786cd55124595551bc755755a1, type: 3}
-  m_Name: ModernChair_medium
+  m_Name: BohoSofa
   m_EditorClassIdentifier: 
   lines:
-  - Hey there! Can you craft a Modern [FurnitureType]? I need it for [Functionality]."
-  furniture: {fileID: 11400000, guid: 0c08b126e9be6074f9941e9238e0060e, type: 2}
+  - 'Hi sweetie! I need a Boho [FurnitureType] that''s perfect for [Functionality]'
+  furniture: {fileID: 11400000, guid: f5cc845ed30221b4f973900f0f258b50, type: 2}

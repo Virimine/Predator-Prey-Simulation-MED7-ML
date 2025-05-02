@@ -9,10 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edd34bc0b92fbe748bbe1fe5cb3b6814, type: 3}
-  m_Name: Phase3_Dialogue
-  m_EditorClassIdentifier: Assembly-CSharp::StoryDialogue
-  lines:
-  - We are expanding!
-  - Ready for the next day?
-  setType: 0
+  m_Script: {fileID: 11500000, guid: 23ec3e24c1ad3084ea9ecd734d695031, type: 3}
+  m_Name: Scandi Chair
+  m_EditorClassIdentifier: Assembly-CSharp::FurnitureData
+  type: 0
+  functionalities: 0000000002000000010000000e000000

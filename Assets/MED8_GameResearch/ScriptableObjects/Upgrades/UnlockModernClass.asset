@@ -12,13 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f881ef933fd489f4c8d4934162e80f8c, type: 3}
   m_Name: UnlockModernClass
   m_EditorClassIdentifier: 
-  upgradeName: 
+  upgradeName: Unlock Modern Class
   description: "Unlock the [style] class. \nWarning: You can only use one class at
     a time.\n\nA Class is a 'blueprint' that wraps  pieces of data, and behavior
     that defines the structure for objects. It is like a recipe \u2014it tells you
     what parts (data) and actions (behavior) the furniture should have. For example,
     it could define how something should look and behave."
-  cost: 0
+  cost: 10
   type: 1
   furnitureType: 2
   styleType: 1

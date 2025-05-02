@@ -12,14 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f881ef933fd489f4c8d4934162e80f8c, type: 3}
   m_Name: UnlockSofaInterface
   m_EditorClassIdentifier: 
-  upgradeName: 
+  upgradeName: Unlock Sofa Interface
   description: "Unlock the [furniture] interface. \n\nAn Interface is a contract
     \u2014 it doesn\u2019t build anything, but if you use it, you must include certain
     actions. It lists what behaviors something should have, without saying how to
     do them. For example, if a furniture uses a Storable interface, it must know
     how to store things. Even though you can only inherit from one parent class,
     you can add as many interfaces as you want to a class."
-  cost: 0
+  cost: 30
   type: 2
   furnitureType: 1
   styleType: 0

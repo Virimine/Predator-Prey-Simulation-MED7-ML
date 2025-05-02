@@ -15,9 +15,26 @@ public enum FurnitureType {
 }
 
 public enum FurnitureFunctionality {
-	SitOn,
-	HasLegs,
-	FancyUncomfortable,
+	OverthinkerThrone,
+	SilentSupport,
+	LaundryButler,
+
+	NapEngine,
+	CrisisCouch,
+	FelineCertified,
+
+	SnackStation,
+	DancersRegret,
+	ToeTarget,
+
+	ComfyChaos,
+	TextileParty,
+
+	DesignerDiscomfort,
+	JudgyElegance,
+
+	WoodEverywhere,
+	ColdComfort,
 }
 
 public enum FurnitureStyle {

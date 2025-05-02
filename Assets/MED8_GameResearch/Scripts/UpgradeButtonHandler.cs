@@ -1,11 +1,11 @@
 ﻿using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UpgradeButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler {
 	[SerializeField] Button upgradeButton;
+	[SerializeField] TextMeshProUGUI nameText;
 	[SerializeField] TextMeshProUGUI costText;
 	[SerializeField] TextMeshProUGUI descriptionText;
 	[Space]
@@ -13,13 +13,10 @@ public class UpgradeButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointe
 	[SerializeField] GameObject objectEnable;
 	[SerializeField] GameObject objectDisable;
 
-
 	private void Start() {
 		costText.text = $"Cost: {upgradeData.cost}";
-
-		// if upgrade == furniture then this: Else, use style
-
 		upgradeButton.onClick.AddListener(AttemptUpgrade);
+		nameText.text = upgradeData.upgradeName;
 	}
 
 	void AttemptUpgrade() {
@@ -29,7 +26,6 @@ public class UpgradeButtonHandler : MonoBehaviour, IPointerEnterHandler, IPointe
 		}
 
 		CoinsHandler.SpendCoins(upgradeData.cost);
-		UpgradeEvents.OnUpgradePurchased?.Invoke(upgradeData);
 
 		if (objectDisable != null) { objectDisable.SetActive(false); }
 		if (objectEnable != null) { objectEnable.SetActive(true); }

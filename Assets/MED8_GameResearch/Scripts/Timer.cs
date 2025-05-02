@@ -26,6 +26,8 @@ public class Timer : MonoBehaviour {
 		}
 	}
 
+	public float AddDebugTime() => totalTime += 3000;
+
 	public void StartTimer(System.Action callback) {
 		remainingTime = totalTime;
 		onTimerFinished = callback;
