@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f881ef933fd489f4c8d4934162e80f8c, type: 3}
-  m_Name: UnlockChairClass
+  m_Name: UnlockTableClass
   m_EditorClassIdentifier: 
-  upgradeName: Unlock Chair Class
+  upgradeName: Unlock Table Class
   description: "Unlock the [furniture] class. \nWarning: You can only use one class
     at a time.\n\nA Class is a 'blueprint' that wraps  pieces of data, and behavior
     that defines the structure for objects. It is like a recipe \u2014it tells you
     what parts (data) and actions (behavior) the furniture should have. For example,
     it could define how something should look and behave."
-  cost: 10
+  cost: 0
   type: 0
-  furnitureType: 0
+  furnitureType: 2
   styleType: 0
