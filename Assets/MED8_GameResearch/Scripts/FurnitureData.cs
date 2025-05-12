@@ -3,6 +3,7 @@ using UnityEngine;
 
 [CreateAssetMenu(fileName = "Furniture", menuName = "ScriptableObjects/Furniture")]
 public class FurnitureData : ScriptableObject {
+	public Sprite sprite;
 	public FurnitureType type;
 	public List<FurnitureFunctionality> functionalities;
 	//public FurnitureStyle style;
