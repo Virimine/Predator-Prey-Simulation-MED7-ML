@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ec3e24c1ad3084ea9ecd734d695031, type: 3}
   m_Name: Scandi Sofa
   m_EditorClassIdentifier: Assembly-CSharp::FurnitureData
+  sprite: {fileID: 21300000, guid: 3a19eb97099fafa449b2eaa9a2b75e78, type: 3}
   type: 1
   functionalities: 0300000004000000050000000e000000

@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ec3e24c1ad3084ea9ecd734d695031, type: 3}
   m_Name: Chair
   m_EditorClassIdentifier: Assembly-CSharp::FurnitureData
+  sprite: {fileID: 21300000, guid: e5abba55947b65f4f8b2440aedd9e596, type: 3}
   type: 0
   functionalities: 000000000100000002000000

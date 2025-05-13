@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ec3e24c1ad3084ea9ecd734d695031, type: 3}
   m_Name: Boho Chair
   m_EditorClassIdentifier: Assembly-CSharp::FurnitureData
+  sprite: {fileID: 21300000, guid: 1fe2edbbe338d0741a49fc0008ca34c5, type: 3}
   type: 0
   functionalities: 00000000020000000100000009000000

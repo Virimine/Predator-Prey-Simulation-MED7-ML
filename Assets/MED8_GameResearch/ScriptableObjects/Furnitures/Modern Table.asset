@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ec3e24c1ad3084ea9ecd734d695031, type: 3}
   m_Name: Modern Table
   m_EditorClassIdentifier: Assembly-CSharp::FurnitureData
+  sprite: {fileID: 21300000, guid: a7cfc653f5acde94ba575130a611321d, type: 3}
   type: 2
   functionalities: 0600000007000000080000000b000000

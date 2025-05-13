@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23ec3e24c1ad3084ea9ecd734d695031, type: 3}
   m_Name: Scandi Table
   m_EditorClassIdentifier: Assembly-CSharp::FurnitureData
+  sprite: {fileID: 21300000, guid: 19c54d2bc648b0e499da997222e0ea15, type: 3}
   type: 2
   functionalities: 0600000007000000080000000e000000
