@@ -13,12 +13,8 @@ MonoBehaviour:
   m_Name: UnlockChairInterface
   m_EditorClassIdentifier: 
   upgradeName: Unlock Chair Interface
-  description: "Unlock the [furniture] interface. \n\nAn Interface is a contract
-    \u2014 it doesn\u2019t build anything, but if you use it, you must include certain
-    actions. It lists what behaviors something should have, without saying how to
-    do them. For example, if a furniture uses a Storable interface, it must know
-    how to store things. Even though you can only inherit from one parent class,
-    you can add as many interfaces as you want to a class."
+  description: "Unlock the [furniture] interface. \n\nAn Interface is a contract.
+    it doesn\u2019t build anything, but if you use it, you must include certain actions."
   cost: 0
   type: 2
   furnitureType: 0
