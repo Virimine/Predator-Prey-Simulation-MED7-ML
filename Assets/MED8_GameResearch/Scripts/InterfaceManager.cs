@@ -11,9 +11,11 @@ public class InterfaceManager : MonoBehaviour {
 	[SerializeField] Button craftButton;
 	[SerializeField] RectTransform upgradePanel;
 	[SerializeField] TextMeshProUGUI coinsText;
+	[SerializeField] UI_DisplayImage displayImage;
 
 	[SerializeField] List<FurnitureDrag> drags;
 	[SerializeField] List<FurnitureDrop> slots;
+
 
 	public List<FurnitureDrop> OccupiedSlots => slots.Where(slot => slot.isOccupied).ToList(); // Get currently occupied slots only
 	public List<FurnitureDrop> AvailableSlots => slots.Where(slot => !slot.isOccupied).ToList(); // Get currently unoccupied slots only
@@ -24,14 +26,9 @@ public class InterfaceManager : MonoBehaviour {
 		craftButton.onClick.AddListener(() => manager.orderManager.ValidateCraft());
 		proceedButton.onClick.AddListener(() => OnProceedButtonPressed());
 		upgradesButton.onClick.AddListener(() => OnContinueNextDayPressed());
-		CoinsHandler.OnCoinsChanged += UpdateCoinsText;
-
 	}
 
-	public void ShowProceedButton(bool isActive) {
-		proceedButton.gameObject.SetActive(isActive);
-	}
-
+	public void ShowProceedButton(bool isActive) => proceedButton.gameObject.SetActive(isActive);
 
 	public void OnContinueNextDayPressed() {
 		upgradePanel.gameObject.SetActive(false);
@@ -40,7 +37,9 @@ public class InterfaceManager : MonoBehaviour {
 	}
 	public void ShowUpgradeScreen() => upgradePanel.gameObject.SetActive(true);
 
-	public void UpdateCoinsText(int newAmount) => coinsText.text = $"coins: {newAmount}";
+	public void DisplayFurniture(Sprite furnitureSprite) => displayImage.DisplayFurniture(furnitureSprite);
+
+	public void DisplayFurniture() => displayImage.DisplayFurniture();
 
 	public void ResetBoard() {
 

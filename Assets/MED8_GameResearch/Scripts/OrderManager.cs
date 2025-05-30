@@ -23,7 +23,6 @@ public class OrderManager : MonoBehaviour {
 			manager.dialogueManager.DisplayRequest(currentRequest);
 
 		itemData = currentRequest.furniture;
-
 	}
 
 	public void ValidateCraft() {
@@ -77,13 +76,14 @@ public class OrderManager : MonoBehaviour {
 	void PlayCorrect() {
 		Debug.Log("Correct Craft!");
 		CoinsHandler.GainCoins(10);
-
+		manager.interfaceManager.DisplayFurniture(itemData.sprite);
 		manager.interfaceManager.ResetBoard();
 		TakeOrder();
 	}
 
 	void PlayWrong() {
 		Debug.Log("Incorrect Craft!");
+		manager.interfaceManager.DisplayFurniture();
 		CoinsHandler.SpendCoins(5);
 	}
 }
