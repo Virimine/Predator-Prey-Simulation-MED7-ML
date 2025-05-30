@@ -16,11 +16,11 @@ public class OrderManager : MonoBehaviour {
 
 	public void TakeOrder() {
 
-			List<CustomerRequest> requests = new List<CustomerRequest>(requestObjects);
-			var rndIndex = Random.Range(0, requests.Count);
-			var currentRequest = requests[rndIndex];
+		List<CustomerRequest> requests = new List<CustomerRequest>(requestObjects);
+		var rndIndex = Random.Range(0, requests.Count);
+		var currentRequest = requests[rndIndex];
 
-			manager.dialogueManager.DisplayRequest(currentRequest);
+		manager.dialogueManager.DisplayRequest(currentRequest);
 
 		itemData = currentRequest.furniture;
 	}
@@ -28,12 +28,13 @@ public class OrderManager : MonoBehaviour {
 	public void ValidateCraft() {
 
 		List<string> remainingRequirements = new List<string>(SetRequirements()); // Make a working copy we can remove from
+		if (remainingRequirements == null) { return; }
 
 		usedSlots.Clear();
 		matchedRequirements.Clear();
 
 		foreach (var slot in manager.interfaceManager.OccupiedSlots) {
-			string itemInSlot = slot.currentItem.itemName;
+			string itemInSlot = slot.currentDrag.itemName;
 
 			var matchedReq = remainingRequirements.FirstOrDefault(req => slot.Matches(req));
 			if (!string.IsNullOrEmpty(matchedReq)) {

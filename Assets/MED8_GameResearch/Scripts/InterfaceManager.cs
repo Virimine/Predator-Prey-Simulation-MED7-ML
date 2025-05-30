@@ -48,13 +48,12 @@ public class InterfaceManager : MonoBehaviour {
 		foreach (var drag in GetActiveDrags()) {
 
 			// remove casting when you make abstract classes
-			if (drag is FunctionalityDrag func && !func.isLocked) {
+			if (drag is FunctionalityDrag func) {
 				func.ResetDrag();
 				continue;
 			}
 
 			if (drag is ClassDrag classDrag) {
-				classDrag.ClearStoredFunctionalities();
 				classDrag.ResetDrag();
 			}
 		}

@@ -680,7 +680,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5226989630732622410}
-  - component: {fileID: 808943899225101113}
+  - component: {fileID: 81778274485432357}
   - component: {fileID: 5877649918729353667}
   - component: {fileID: 2648108424209279870}
   - component: {fileID: 4639044986077816124}
@@ -716,7 +716,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 88}
   m_SizeDelta: {x: 240, y: 280}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &808943899225101113
+--- !u!114 &81778274485432357
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -725,7 +725,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3144882446338047372}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb5a809a80b13b646b2c3af53043b9c8, type: 3}
+  m_Script: {fileID: 11500000, guid: 430b2d1afe0314d4f909ade3f3bca82e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nameTMP: {fileID: 6892148581938145421}
@@ -734,6 +734,7 @@ MonoBehaviour:
   itemName: 
   removeFunctionality: {fileID: 2717879042084644594}
   interfaceLayout: {fileID: 413452449600186481}
+  parentDrag: {fileID: 0}
   removeCost: 20
 --- !u!222 &5877649918729353667
 CanvasRenderer:
@@ -1580,6 +1581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1865619771569061139, guid: 8672ecbccaa0bc7478f7b314978e1493, type: 3}
+    - {fileID: 4304879951355530085, guid: 8672ecbccaa0bc7478f7b314978e1493, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1607,7 +1609,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotType: 1
-  dragParent: {fileID: 808943899225101113}
+  parentDrag: {fileID: 81778274485432357}
 --- !u!224 &8025239233916180948 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4643104082235159219, guid: 8672ecbccaa0bc7478f7b314978e1493,
@@ -1759,6 +1761,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1865619771569061139, guid: 8672ecbccaa0bc7478f7b314978e1493, type: 3}
+    - {fileID: 4304879951355530085, guid: 8672ecbccaa0bc7478f7b314978e1493, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1792,4 +1795,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotType: 1
-  dragParent: {fileID: 808943899225101113}
+  parentDrag: {fileID: 81778274485432357}

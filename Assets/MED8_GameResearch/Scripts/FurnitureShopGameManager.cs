@@ -59,6 +59,7 @@ public class FurnitureShopGameManager : MonoBehaviour {
 
 	void Update() {
 		if (Input.GetKeyDown(KeyCode.Tab)) { timer.AddDebugTime(); }
+		if (Input.GetKeyDown(KeyCode.Q)) { CoinsHandler.GainCoins(50); }
 	}
 
 	public void SetState(GameState newState) {

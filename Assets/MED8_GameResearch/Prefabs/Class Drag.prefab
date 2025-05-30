@@ -333,7 +333,6 @@ MonoBehaviour:
   itemType: 0
   itemName: 0
   removeFunctionality: {fileID: 1226477567863223010}
-  interfaceLayout: {fileID: 0}
   removeCost: 10
 --- !u!222 &8863361972257314563
 CanvasRenderer:
@@ -599,7 +598,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8998851162038279314
 RectTransform:
   m_ObjectHideFlags: 0
@@ -947,7 +946,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8877843068132780576
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1255,6 +1254,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1865619771569061139, guid: 8672ecbccaa0bc7478f7b314978e1493, type: 3}
+    - {fileID: 4304879951355530085, guid: 8672ecbccaa0bc7478f7b314978e1493, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1282,7 +1282,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotType: 1
-  dragParent: {fileID: 9195626351662198137}
+  parentDrag: {fileID: 9195626351662198137}
 --- !u!224 &5543009465064017242 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4643104082235159219, guid: 8672ecbccaa0bc7478f7b314978e1493,
@@ -1337,6 +1337,16 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 184
       objectReference: {fileID: 0}
+    - target: {fileID: 8471545182163457616, guid: ba79c224b6b63d64f90460f352389254,
+        type: 3}
+      propertyPath: slotType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8471545182163457616, guid: ba79c224b6b63d64f90460f352389254,
+        type: 3}
+      propertyPath: parentDrag
+      value: 
+      objectReference: {fileID: 9195626351662198137}
     - target: {fileID: 9056919450506003088, guid: ba79c224b6b63d64f90460f352389254,
         type: 3}
       propertyPath: m_Pivot.x
@@ -1441,32 +1451,8 @@ PrefabInstance:
     - {fileID: 2610743755735026992, guid: ba79c224b6b63d64f90460f352389254, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1727649930886650731, guid: ba79c224b6b63d64f90460f352389254,
-        type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 1815809506054922457}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ba79c224b6b63d64f90460f352389254, type: 3}
---- !u!1 &3158677157498067095 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1727649930886650731, guid: ba79c224b6b63d64f90460f352389254,
-    type: 3}
-  m_PrefabInstance: {fileID: 4335902486598124540}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1815809506054922457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3158677157498067095}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3cd4128ade205b44970cb57bb3f3562, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slotType: 2
-  dragParent: {fileID: 9195626351662198137}
 --- !u!224 &4727825335336730988 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9056919450506003088, guid: ba79c224b6b63d64f90460f352389254,
@@ -1593,6 +1579,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1865619771569061139, guid: 8672ecbccaa0bc7478f7b314978e1493, type: 3}
+    - {fileID: 4304879951355530085, guid: 8672ecbccaa0bc7478f7b314978e1493, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -1626,4 +1613,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slotType: 1
-  dragParent: {fileID: 9195626351662198137}
+  parentDrag: {fileID: 9195626351662198137}

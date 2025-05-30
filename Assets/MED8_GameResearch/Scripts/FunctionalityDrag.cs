@@ -28,14 +28,13 @@ public class FunctionalityDrag : FurnitureDrag {
 
 		if (isLocked) {
 
-			Debug.LogWarning(itemName + " " + isLocked);
+			Debug.Log(itemName + " is Locked: " + isLocked);
+
 			rectTransform.localPosition = Vector3.zero;
-			//ClearDropTarget();
+			//SetDragInteractivity(true);
 			return;
 		}
 
-		Debug.LogWarning(itemName + " here");
 		base.ResetDrag();
-		SetDragInteractivity(true);
 	}
 }
